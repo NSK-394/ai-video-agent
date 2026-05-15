@@ -1,0 +1,51 @@
+# ─── Core: Video / Audio Processing ───────────────────────────────────────
+# OpenCV — frame decoding, histogram-based cut detection fallback, semantic analysis
+opencv-python==4.9.0.80
+
+# NumPy — array math for motion scoring, beat analysis, and audio processing
+numpy==1.26.4
+
+# librosa — beat tracking, onset detection, BPM estimation
+librosa==0.10.2
+
+# SoundFile — audio I/O backend for librosa (cross-platform)
+soundfile==0.12.1
+
+# OpenAI Whisper — speech-to-text with word-level timestamps
+openai-whisper==20231117
+
+# PySceneDetect — primary cut/scene detection backend
+scenedetect[opencv]==0.6.4
+
+# ─── FFmpeg Python wrapper (optional — system ffmpeg is the real dependency) ──
+# Used for duration probing; audio extraction falls back to subprocess if missing.
+# Requires system ffmpeg to be installed and on PATH regardless.
+ffmpeg-python==0.2.0
+
+# ─── DaVinci Resolve — GUI Automation Fallback ─────────────────────────────
+# Used by automation/ layer for tasks the Resolve API does not expose
+pyautogui==0.9.54
+pynput==1.7.6
+pygetwindow==0.0.9
+
+# ─── Utilities ─────────────────────────────────────────────────────────────
+# .env file loading for config/settings.py
+python-dotenv==1.0.1
+
+# Structured logging with file rotation and color formatting
+# Falls back gracefully to stdlib logging if not available (e.g., Resolve's Python)
+loguru==0.7.2
+
+# ─── MCP Integration (optional) ────────────────────────────────────────────
+# Required only if using the MCP server (mcp/ module)
+# mcp>=1.0.0
+
+# ─── Development / Testing (not required for production) ───────────────────
+# pytest>=8.0.0
+# mypy>=1.8.0
+# ruff>=0.3.0
+
+# ─── System Requirements (not pip-installable) ─────────────────────────────
+# FFmpeg 6.0+              https://ffmpeg.org/download.html  (must be on PATH)
+# DaVinci Resolve Studio 18+  https://www.blackmagicdesign.com/products/davinciresolve
+# Python 3.10-3.12  (3.11 recommended)

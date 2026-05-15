@@ -1,0 +1,58 @@
+name: Lint & Import Check
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # Install only the pure-Python subset that works without system libraries
+          pip install python-dotenv loguru numpy
+
+      - name: Check module imports (no Resolve / FFmpeg required)
+        run: |
+          python -c "from config.constants import BEAT_ALIGNMENT_TOLERANCE; print('constants OK')"
+          python -c "from config.settings import load_settings; print('settings OK')"
+          python -c "from utils.logger import get_logger; print('logger OK')"
+          python -c "from utils.file_manager import ensure_dir; print('file_manager OK')"
+
+      - name: Check for syntax errors across all modules
+        run: |
+          python -m py_compile main.py
+          python -m py_compile config/constants.py
+          python -m py_compile config/settings.py
+          python -m py_compile utils/logger.py
+          python -m py_compile utils/ffmpeg_utils.py
+          python -m py_compile utils/video_utils.py
+          python -m py_compile analysis/blueprint_schema.py
+          python -m py_compile analysis/style_analysis.py
+          python -m py_compile editor/pacing_engine.py
+          python -m py_compile editor/beat_sync_editor.py
+          python -m py_compile editor/visual_energy_mapper.py
+          python -m py_compile editor/impact_detector.py
+          python -m py_compile editor/camera_animation.py
+          echo "All syntax checks passed"
