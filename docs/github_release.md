@@ -34,7 +34,7 @@ librosa  beat-detection  automation  opencv  semantic-analysis  video-automation
 
 ### Before First Push
 
-- [ ] Replace `YOUR_USERNAME` in `README.md` and `pyproject.toml` with your GitHub username
+- [ ] Replace `NSK-394` in `README.md` and `pyproject.toml` with your GitHub username
 - [ ] Verify `.gitignore` excludes all media files (run `git status` — no `.mp4`, `.wav`, `.log` should appear)
 - [ ] Confirm `.env` is not tracked: `git ls-files .env` should return empty
 - [ ] Check no hardcoded user paths in Python source files:
@@ -65,7 +65,7 @@ Features: blueprint extraction, semantic clip ranking, beat-sync,
 cinematic effect engine, quality scoring, reference audio transfer."
 
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/ai-video-agent.git
+git remote add origin https://github.com/NSK-394/ai-video-agent.git
 git push -u origin main
 ```
 
@@ -95,7 +95,7 @@ The pipeline is fully modular: analysis layer → blueprint.json → editor laye
 
 Tech stack: Python · OpenCV · FFmpeg · Whisper · librosa · DaVinci Resolve API
 
-🔗 GitHub: github.com/YOUR_USERNAME/ai-video-agent
+🔗 GitHub: github.com/NSK-394/ai-video-agent
 
 #Python #ComputerVision #AI #VideoEditing #OpenSource #DaVinciResolve
 ```

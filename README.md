@@ -247,7 +247,7 @@ The system supports **two connection modes**:
 ### 1 — Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-video-agent.git
+git clone https://github.com/NSK-394/ai-video-agent.git
 cd ai-video-agent
 ```
 
@@ -530,7 +530,7 @@ This project is licensed under the MIT License — see [`LICENSE`](LICENSE) for 
 
 ## Credits
 
-Built by [Nikhil](https://github.com/YOUR_USERNAME) as an AI systems engineering project combining computer vision, audio analysis, and professional NLE automation.
+Built by [Nikhil](https://github.com/NSK-394) as an AI systems engineering project combining computer vision, audio analysis, and professional NLE automation.
 
 **Powered by:**
 - [DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve) — professional NLE by Blackmagic Design

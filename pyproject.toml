@@ -31,10 +31,10 @@ classifiers = [
 ai-video-agent = "main:main"
 
 [project.urls]
-Homepage = "https://github.com/YOUR_USERNAME/ai-video-agent"
-Repository = "https://github.com/YOUR_USERNAME/ai-video-agent"
-Issues = "https://github.com/YOUR_USERNAME/ai-video-agent/issues"
-Changelog = "https://github.com/YOUR_USERNAME/ai-video-agent/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/NSK-394/ai-video-agent"
+Repository = "https://github.com/NSK-394/ai-video-agent"
+Issues = "https://github.com/NSK-394/ai-video-agent/issues"
+Changelog = "https://github.com/NSK-394/ai-video-agent/blob/main/CHANGELOG.md"
 
 [tool.setuptools.packages.find]
 where = ["."]
